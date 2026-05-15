@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: neuroledger-dashboard
+    env: node
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NEXT_PUBLIC_RPC_URL
+        value: https://evmrpc-testnet.0g.ai
+      - key: NEXT_PUBLIC_EXPLORER_URL
+        value: https://chainscan-galileo.0g.ai
+      - key: NODE_VERSION
+        value: 20.x
+
+  - type: worker
+    name: neuroledger-agent-runner
+    env: python
+    plan: free
+    buildCommand: pip install -r agent/requirements.txt
+    startCommand: PYTHONPATH=. python -m agent.neurolledger.runner --hospitals manipal,srenivas,dfl --round 1 --no-chain --no-tee
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
