@@ -1,0 +1,58 @@
+{
+  "manipal": {
+    "dataset": "uci_heart",
+    "native_dim": 13,
+    "disease": "Cardiovascular Disease",
+    "wallet_env": "AGENT_A_KEY",
+    "story": "Manipal Hospitals — South India cardiovascular burden",
+    "samples": 297
+  },
+  "srenivas": {
+    "dataset": "pima_diabetes",
+    "native_dim": 8,
+    "disease": "Type 2 Diabetes",
+    "wallet_env": "AGENT_B_KEY",
+    "story": "Sri Renivas Hospital — high T2D prevalence APAC",
+    "samples": 768
+  },
+  "dfl": {
+    "dataset": "breast_cancer",
+    "native_dim": 30,
+    "disease": "Breast Cancer",
+    "wallet_env": "AGENT_C_KEY",
+    "story": "DFL Medical — oncology screening network",
+    "samples": 569
+  },
+  "rusty": {
+    "dataset": "uci_kidney",
+    "native_dim": 24,
+    "disease": "Chronic Kidney Disease",
+    "wallet_env": "AGENT_D_KEY",
+    "story": "Rusty Memorial — CKD from diabetes complications",
+    "samples": 400
+  },
+  "hospital5": {
+    "dataset": "uci_liver",
+    "native_dim": 5,
+    "disease": "Liver Disorders",
+    "wallet_env": "AGENT_E_KEY",
+    "story": "General Hospital — high hepatitis B burden",
+    "samples": 345
+  },
+  "Medanta": {
+    "dataset": "uci_kidney",
+    "native_dim": 24,
+    "disease": "Chronic Kidney Disease",
+    "wallet_env": "AGENT_D_KEY",
+    "story": "Medanta — multi-specialty tertiary care, CKD program",
+    "samples": 400
+  },
+  "medanta": {
+    "dataset": "uci_kidney",
+    "native_dim": 24,
+    "disease": "Chronic Kidney Disease",
+    "wallet_env": "AGENT_D_KEY",
+    "story": "Medanta — multi-specialty tertiary care, CKD program",
+    "samples": 400
+  }
+}

@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js build artifacts
+.next/
+out/
+
+# Hardhat build artifacts
+artifacts/
+cache/
+typechain/
+typechain-types/
+coverage/
+coverage.json
+*.db
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# Environment files
+.env*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Project-specific local storage data
+0g_storage_e2e/
+agent/0g_storage_e2e/
+test-results/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.claude/

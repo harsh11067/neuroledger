@@ -1,0 +1,35 @@
+{
+  "name": "neuroledger",
+  "version": "1.0.0",
+  "description": "Verifiable Autonomous Clinical Intelligence Network",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "test:verbose": "hardhat test --verbose",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts --network hardhat",
+    "deploy:og": "hardhat run scripts/deploy.ts --network og_newton",
+    "clean": "hardhat clean",
+    "node": "hardhat node"
+  },
+  "keywords": [
+    "federated-learning",
+    "0g",
+    "blockchain",
+    "medical-ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.2",
+    "@types/node": "^25.6.0",
+    "dotenv": "^17.4.2",
+    "ethers": "^6.16.0",
+    "hardhat": "^2.22.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@0gfoundation/0g-compute-ts-sdk": "^0.8.3"
+  }
+}

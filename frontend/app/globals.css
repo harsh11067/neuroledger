@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-base: #0A0B10;
+  --color-bg-surface: #13151C;
+  --color-bg-glass: rgba(19, 21, 28, 0.6);
+  --color-bg-panel: rgba(19, 21, 28, 0.4);
+  
+  --color-neon-blue: #00F0FF;
+  --color-neon-purple: #7000FF;
+  --color-neon-pink: #B500FF;
+  
+  --color-status-success: #00FF66;
+  --color-status-warning: #FFB800;
+  --color-status-danger: #FF003C;
+
+  --color-text-main: #E2E8F0;
+  --color-text-muted: #64748B;
+  
+  --font-sans: "Satoshi", "Neue Montreal", "Aptos", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", "Berkeley Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-main);
+    font-family: var(--font-sans);
+    overflow: hidden; /* It's an SPA dashboard */
+  }
+
+  /* Custom scrollbar for data dense tables */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-bg-surface);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-neon-purple);
+  }
+}
+
+@layer components {
+  .glass-panel {
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-panel-accent {
+    background: var(--color-bg-glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 240, 255, 0.05);
+  }
+
+  .glow-text-blue {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  }
+
+  .glow-text-success {
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+  }
+
+  .glow-border-purple {
+    box-shadow: 0 0 15px rgba(181, 0, 255, 0.3);
+  }
+}

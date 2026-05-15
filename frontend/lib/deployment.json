@@ -1,0 +1,9 @@
+{
+  "contractAddress": "0x1f52371d93bBdAeEBBAdbEA72A7f7ceb6f6503DD",
+  "deployTxHash": "0x9d1e59444c4d1cef0a4bafd7950633d13a426c043a36a4855172dce19a18b2ca",
+  "deployerAddress": "0x071a19F7eB5D2eD8188858c5f69de44CcBD725e3",
+  "network": "galileo",
+  "chainId": 16602,
+  "explorerUrl": "https://chainscan-galileo.0g.ai/address/0x1f52371d93bBdAeEBBAdbEA72A7f7ceb6f6503DD",
+  "deployedAt": "2026-05-14T04:06:49.395Z"
+}
