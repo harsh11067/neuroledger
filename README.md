@@ -62,7 +62,7 @@ PYTHONPATH=. agent/venv/bin/python -m agent.neurolledger.runner \
 - `agent/`: Python FL stack (Model, DP, Multi-Krum Aggregator, Storage SDK).
 - `contracts/`: `NeuroLedger.sol` — The core coordination smart contract.
 - `frontend/`: Next.js 15 Dashboard with real-time 0G Chain event listeners.
-- `radiant-debris/`: Astro-based high-fidelity landing page.
+- `docs/`: Technical documentation (Architecture, Mechanism, Setup).
 - `scripts/`: Verification and reproducibility tools.
 
 ---
