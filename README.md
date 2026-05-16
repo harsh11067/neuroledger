@@ -12,11 +12,13 @@
 
 | | |
 |---|---|
+| **Agent Runner** | Railway Background Worker |
 | **Network** | 0G Mainnet (Chain ID: 16661) |
 | **Contract** | [`0x8a3f97561819e66959cbECEE664e87bd10b8F865`](https://chainscan.0g.ai/address/0x8a3f97561819e66959cbECEE664e87bd10b8F865) |
 | **Owner / Aggregator** | `0x071a19F7eB5D2eD8188858c5f69de44CcBD725e3` |
 | **TeeML Provider** | [`0xa48f01287233509FD694a22Bf840225062E67836`](https://compute.0g.ai) — qwen/qwen-2.5-7b-instruct (DStack TDX) |
 | **Testnet Contract** | [`0x1f52371d93bBdAeEBBAdbEA72A7f7ceb6f6503DD`](https://chainscan-galileo.0g.ai/address/0x1f52371d93bBdAeEBBAdbEA72A7f7ceb6f6503DD) — 25 rounds complete |
+| **Frontend** | [Vercel](https://neuroledgerprivacycommunity.vercel.app/) |
 
 ---
 
