@@ -14,14 +14,12 @@ services:
       - key: NODE_VERSION
         value: 20.x
 
-  - type: web
+  - type: worker
     name: neuroledger-agent-runner
     env: python
-    plan: free
+    plan: starter
     buildCommand: pip install -r agent/requirements.txt
     startCommand: PYTHONPATH=. python -m agent.neurolledger.runner --hospitals manipal,srenivas,dfl --round 1 --no-chain --no-tee
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
-      - key: PORT
-        value: 10000
