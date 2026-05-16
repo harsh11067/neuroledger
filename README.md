@@ -12,7 +12,7 @@
 
 | | |
 |---|---|
-| **Agent Runner** | Railway Background Worker |
+| **Agent Runner** | Render Background Worker |
 | **Network** | 0G Mainnet (Chain ID: 16661) |
 | **Contract** | [`0x8a3f97561819e66959cbECEE664e87bd10b8F865`](https://chainscan.0g.ai/address/0x8a3f97561819e66959cbECEE664e87bd10b8F865) |
 | **Owner / Aggregator** | `0x071a19F7eB5D2eD8188858c5f69de44CcBD725e3` |
