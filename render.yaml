@@ -14,7 +14,7 @@ services:
       - key: NODE_VERSION
         value: 20.x
 
-  - type: worker
+  - type: web
     name: neuroledger-agent-runner
     env: python
     plan: free
@@ -23,3 +23,5 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
+      - key: PORT
+        value: 10000

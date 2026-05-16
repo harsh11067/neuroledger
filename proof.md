@@ -20,7 +20,8 @@
 | Role | Address |
 |------|---------|
 | Owner / Aggregator / Deployer | `0x071a19F7eB5D2eD8188858c5f69de44CcBD725e3` |
-| TeeML Provider (qwen-2.5-7b) | `0xa48f01287233509FD694a22Bf840225062E67836` |
+| **Mainnet TeeML Provider** (deepseek-chat-v3-0324) | `0x1B3AAef3ae5050EEE04ea38cD4B087472BD85EB0` |
+| Testnet TeeML Provider (qwen-2.5-7b) | `0xa48f01287233509FD694a22Bf840225062E67836` |
 
 ---
 
@@ -38,7 +39,31 @@
 
 ---
 
-## TeeML Attestation
+## Mainnet TeeML Attestation — Round 4
+
+| | |
+|---|---|
+| **Provider** | `0x1B3AAef3ae5050EEE04ea38cD4B087472BD85EB0` |
+| **Model** | `deepseek/deepseek-chat-v3-0324` |
+| **Hardware** | DStack TEE (Intel TDX) |
+| **Verifiability** | TeeML |
+| **hardware_verified** | `true` (signerMatch=true, composeHash=true) |
+| **inference_valid** | `true` (processResponse → isValid=true) |
+
+**Mainnet Round 4 — Full TeeML proof:**
+```
+TX:               0x575b1193d4690d981aafb64e7ec526572a1af0b76d546c86360d9c8d2bf11dd3
+Aggregation hash: 0x6560e2fbb287318a32fd16c4dab9921867415fe7cbff7fa81c3d0c89a00f0018
+TEE Proof hash:   0x26c85d157499efe27e0f27eea5a1c72518f235e9deb2782385fcb4ed82711516
+TEE Proof CID:    0xbed29dc5015d97afe14951d7eed065ffdf46bdbcf85d673bbee1d7aefee91fe2
+Global model CID: 0xdc15ea7cd1d9700dc26fd9f6289bbb936357223abc1587b97f90970c1ab76e79
+Gradient CID (manipal): 0x88d9d2473c243b8bddca1aed2f1fc3476f75f82cecc85937b8774da5cee45e09
+Model version:    round_4_v26c85d15
+```
+
+---
+
+## Testnet TeeML Attestation
 
 | | |
 |---|---|

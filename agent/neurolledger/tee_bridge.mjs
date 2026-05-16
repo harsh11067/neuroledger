@@ -247,7 +247,8 @@ async function main() {
 }
 
 async function ensureLedgerAndSubAccount(broker, wallet, providerAddress) {
-  const MIN_SUB_OG = BigInt(5e17); // 0.5 OG in neuron
+  const MIN_SUB_OG = BigInt(1e18); // 1 OG minimum (mainnet requirement)
+  const SUB_TRANSFER = BigInt(1e18); // transfer 1 OG to sub-account
   const GAS_RESERVE = 0.1;
 
   log("Checking compute ledger...");
@@ -295,8 +296,8 @@ async function ensureLedgerAndSubAccount(broker, wallet, providerAddress) {
     log(`Sub-account: ${ethers.formatEther(subBal)} OG`);
 
     if (subBal < MIN_SUB_OG) {
-      log("Transferring 0.5 OG to provider sub-account...");
-      await broker.ledger.transferFund(providerAddress, "inference", BigInt(5e17));
+      log("Transferring 1 OG to provider sub-account...");
+      await broker.ledger.transferFund(providerAddress, "inference", SUB_TRANSFER);
       log("Sub-account funded.");
     }
   } catch (e) {

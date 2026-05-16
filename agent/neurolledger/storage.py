@@ -10,8 +10,9 @@ from typing import Optional
 import numpy as _np
 
 INDEXER_RPC = os.environ.get("STORAGE_INDEXER_RPC", "https://indexer-storage-testnet-turbo.0g.ai")
-BLOCKCHAIN_RPC = os.environ.get("OG_RPC_URL", "https://evmrpc.0g.ai")
-CHAIN_ID = int(os.environ.get("CHAIN_ID", "16661"))
+# Storage SDK uses testnet chain regardless of main OG_RPC_URL — 0G Storage contracts only on testnet
+BLOCKCHAIN_RPC = os.environ.get("STORAGE_BLOCKCHAIN_RPC", "https://evmrpc-testnet.0g.ai")
+CHAIN_ID = int(os.environ.get("STORAGE_CHAIN_ID", "16602"))
 
 
 def _sha256_hex(data: bytes) -> str:

@@ -185,7 +185,7 @@ def main():
     args = parser.parse_args()
 
     hospital_names = [h.strip() for h in args.hospitals.split(",")]
-    assert len(hospital_names) >= 2, "Need at least 2 hospitals"
+    assert len(hospital_names) >= 1, "Need at least 1 hospital"
 
     print(f"\n{'='*60}")
     print(f"  NeuroLedger Round {args.round} — {len(hospital_names)} hospitals")
