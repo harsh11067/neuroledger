@@ -35,10 +35,14 @@ export const NEUROLEDGER_ABI = [
   "function getRejectCount(uint256 roundId) view returns (uint256)",
 ] as const;
 
-// 0G Galileo Testnet constants
-export const CHAIN_ID = 16661;
-export const RPC_URL = "https://evmrpc.0g.ai";
-export const EXPLORER_URL = "https://chainscan.0g.ai";
+// 0G Galileo Testnet constants (Fallbacks)
+const DEFAULT_CHAIN_ID = 16602;
+const DEFAULT_RPC_URL = "https://evmrpc-testnet.0g.ai";
+const DEFAULT_EXPLORER_URL = "https://chainscan-galileo.0g.ai";
+
+export const CHAIN_ID = Number(process.env.NEXT_PUBLIC_CHAIN_ID) || DEFAULT_CHAIN_ID;
+export const RPC_URL = process.env.NEXT_PUBLIC_RPC_URL || DEFAULT_RPC_URL;
+export const EXPLORER_URL = process.env.NEXT_PUBLIC_EXPLORER_URL || DEFAULT_EXPLORER_URL;
 
 // Event type constants
 export type EventType =
