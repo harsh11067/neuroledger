@@ -3,8 +3,13 @@ const fs = require("fs");
 const path = require("path");
 
 async function main() {
+  const network = await ethers.provider.getNetwork();
+  const chainId = Number(network.chainId);
+  const isMainnet = chainId === 16661;
+  const isGalileo = chainId === 16602;
+
   console.log("═══════════════════════════════════════════════════════════");
-  console.log("  NeuroLedger — Deploying to 0G Newton Testnet");
+  console.log(`  NeuroLedger — Deploying to ${isMainnet ? "0G Mainnet" : isGalileo ? "0G Galileo Testnet" : "Hardhat"}`);
   console.log("═══════════════════════════════════════════════════════════\n");
 
   const [deployer] = await ethers.getSigners();
@@ -29,43 +34,37 @@ async function main() {
   console.log("   Owner:", await neuroLedger.owner());
   console.log("   Aggregator:", await neuroLedger.aggregator());
 
-  if (deployTx?.hash) {
+  const explorerBase = isMainnet
+    ? "https://chainscan.0g.ai"
+    : isGalileo
+    ? "https://chainscan-galileo.0g.ai"
+    : "";
+
+  if (deployTx?.hash && explorerBase) {
     console.log("   TX Hash:", deployTx.hash);
-    const network = await ethers.provider.getNetwork();
-    if (Number(network.chainId) === 16602) {
-      console.log("   Explorer: https://chainscan-galileo.0g.ai/tx/" + deployTx.hash);
-    }
+    console.log(`   Explorer: ${explorerBase}/tx/${deployTx.hash}`);
   }
 
-  // Set Aggregator if provided in .env
-  const teeProvider = process.env.TEE_PROVIDER_ADDRESS;
-  if (teeProvider && ethers.isAddress(teeProvider)) {
-    console.log(`\n⚙️  Setting aggregator to: ${teeProvider}`);
-    const setAggTx = await neuroLedger.setAggregator(teeProvider);
-    await setAggTx.wait();
-    console.log("   Aggregator updated.");
-  }
-
-  // Fund contract for rewards
-  console.log("\n💰 Funding contract for rewards (0.05 A0GI)...");
+  // Fund contract for rewards (keep 0.5 OG for gas on mainnet, 0.05 on testnet)
+  const fundAmount = isMainnet ? "0.1" : "0.05";
+  console.log(`\n💰 Funding contract for rewards (${fundAmount} OG)...`);
   const fundTx = await deployer.sendTransaction({
     to: contractAddress,
-    value: ethers.parseEther("0.05"),
+    value: ethers.parseEther(fundAmount),
   });
   await fundTx.wait();
-  console.log("   Contract balance:", ethers.formatEther(await ethers.provider.getBalance(contractAddress)), "A0GI");
+  console.log("   Contract balance:", ethers.formatEther(await ethers.provider.getBalance(contractAddress)), "OG");
 
   // Save deployment info for frontend
-  const network = await ethers.provider.getNetwork();
-  const isNewton = Number(network.chainId) === 16602;
+  const networkName = isMainnet ? "mainnet" : isGalileo ? "galileo" : "hardhat";
 
   const deployment = {
     contractAddress,
     deployTxHash: deployTx?.hash ?? "",
     deployerAddress: deployer.address,
-    network: isNewton ? "galileo" : "hardhat",
-    chainId: Number(network.chainId),
-    explorerUrl: isNewton ? `https://chainscan-galileo.0g.ai/address/${contractAddress}` : "",
+    network: networkName,
+    chainId,
+    explorerUrl: explorerBase ? `${explorerBase}/address/${contractAddress}` : "",
     deployedAt: new Date().toISOString(),
   };
 
@@ -76,8 +75,8 @@ async function main() {
   console.log("\n═══════════════════════════════════════════════════════════");
   console.log("  Deployment Complete");
   console.log("  Contract Address:", contractAddress);
-  if (isNewton) {
-    console.log("  Explorer: https://chainscan-galileo.0g.ai/address/" + contractAddress);
+  if (explorerBase) {
+    console.log(`  Explorer: ${explorerBase}/address/${contractAddress}`);
   }
   console.log("═══════════════════════════════════════════════════════════");
 

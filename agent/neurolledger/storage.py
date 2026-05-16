@@ -9,9 +9,9 @@ import time
 from typing import Optional
 import numpy as _np
 
-INDEXER_RPC = "https://indexer-storage-testnet-turbo.0g.ai"
-BLOCKCHAIN_RPC = "https://evmrpc-testnet.0g.ai"
-CHAIN_ID = 16602
+INDEXER_RPC = os.environ.get("STORAGE_INDEXER_RPC", "https://indexer-storage-testnet-turbo.0g.ai")
+BLOCKCHAIN_RPC = os.environ.get("OG_RPC_URL", "https://evmrpc.0g.ai")
+CHAIN_ID = int(os.environ.get("CHAIN_ID", "16661"))
 
 
 def _sha256_hex(data: bytes) -> str:

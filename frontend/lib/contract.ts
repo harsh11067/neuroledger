@@ -1,7 +1,7 @@
 /**
  * NeuroLedger Contract ABI & Interface
  * Mirrors contracts/NeuroLedger.sol — all 8 events + core functions
- * Target: 0G Galileo Testnet (Chain ID 16602)
+ * Target: 0G Mainnet (Chain ID 16661)
  */
 
 export const NEUROLEDGER_ABI = [
@@ -36,9 +36,9 @@ export const NEUROLEDGER_ABI = [
 ] as const;
 
 // 0G Galileo Testnet constants
-export const CHAIN_ID = 16602;
-export const RPC_URL = "https://evmrpc-testnet.0g.ai";
-export const EXPLORER_URL = "https://chainscan-galileo.0g.ai";
+export const CHAIN_ID = 16661;
+export const RPC_URL = "https://evmrpc.0g.ai";
+export const EXPLORER_URL = "https://chainscan.0g.ai";
 
 // Event type constants
 export type EventType =

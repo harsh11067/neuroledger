@@ -45,8 +45,8 @@ except ImportError:
 import time as _time
 import numpy as np
 
-RPC_URL = os.environ.get("OG_RPC_URL", "https://evmrpc-testnet.0g.ai")
-CHAIN_ID = 16602
+RPC_URL = os.environ.get("OG_RPC_URL", "https://evmrpc.0g.ai")
+CHAIN_ID = int(os.environ.get("CHAIN_ID", "16661"))
 
 
 def submit_gradient_onchain(w3, contract, account, round_id: int, cid: str,

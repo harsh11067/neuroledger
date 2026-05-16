@@ -1,9 +1,9 @@
 {
-  "contractAddress": "0x1f52371d93bBdAeEBBAdbEA72A7f7ceb6f6503DD",
-  "deployTxHash": "0x9d1e59444c4d1cef0a4bafd7950633d13a426c043a36a4855172dce19a18b2ca",
+  "contractAddress": "0x8a3f97561819e66959cbECEE664e87bd10b8F865",
+  "deployTxHash": "0x34b66c9ad09d6c5f8eeb561ca805171da32ddedbb6a1ddc340cc4d06752c2ed9",
   "deployerAddress": "0x071a19F7eB5D2eD8188858c5f69de44CcBD725e3",
-  "network": "galileo",
-  "chainId": 16602,
-  "explorerUrl": "https://chainscan-galileo.0g.ai/address/0x1f52371d93bBdAeEBBAdbEA72A7f7ceb6f6503DD",
-  "deployedAt": "2026-05-14T04:06:49.395Z"
+  "network": "mainnet",
+  "chainId": 16661,
+  "explorerUrl": "https://chainscan.0g.ai/address/0x8a3f97561819e66959cbECEE664e87bd10b8F865",
+  "deployedAt": "2026-05-16T06:24:06.816Z"
 }
