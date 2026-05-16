@@ -1,20 +1,58 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# NeuroLedger Frontend
 
-# Run and deploy your AI Studio app
+Next.js 15 dashboard for the NeuroLedger verifiable federated learning network.
 
-This contains everything you need to run your app locally.
+## Live
 
-View your app in AI Studio: https://ai.studio/apps/404938c9-6d34-4bcf-90c9-3f1f34955c61
+[neuroledgerprivacycommunity.vercel.app](https://neuroledgerprivacycommunity.vercel.app/)
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js 18+
 
+```bash
+npm install
+npm run dev
+# → http://localhost:3000
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+The dashboard reads live data from 0G Mainnet (Chain 16661). No backend server required — all chain reads use public RPC.
+
+## Dashboard Panels
+
+| Panel | Description |
+|-------|-------------|
+| **GlobalNetworkView** | Spline 3D visualization of the hospital node network |
+| **NodeDeploymentPanel** | Connect MetaMask → register a new hospital agent on-chain |
+| **TrainingSimulator** | Run a local FL simulation or trigger an on-chain round |
+| **AttestationPanel** | Live `AggregationComplete` events with TeeML proof status badges |
+| **ArtifactLedger** | All 8 on-chain event types, last 200k blocks, filterable |
+
+## Configuration
+
+The app reads from `lib/deployment.json` and `lib/contract.ts`:
+
+```json
+{
+  "contractAddress": "0x8a3f97561819e66959cbECEE664e87bd10b8F865",
+  "network": "mainnet",
+  "chainId": 16661
+}
+```
+
+To point at testnet, set:
+```json
+{
+  "contractAddress": "0x1f52371d93bBdAeEBBAdbEA72A7f7ceb6f6503DD",
+  "network": "galileo",
+  "chainId": 16602
+}
+```
+
+## Build
+
+```bash
+npm run build    # production build
+npm run lint     # ESLint
+npx tsc --noEmit # type check
+```
